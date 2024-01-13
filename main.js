@@ -21,9 +21,22 @@ function generateGrid(amount) {
     mainContainer.appendChild(fragment);
 }
 
+function randomInt() {
+    return Math.floor(Math.random() * 256);
+}
+
+function generateRGB() {
+    let R = randomInt();
+    let G = randomInt();
+    let B = randomInt();
+    let RGB = "rgb(" + R + ", " + G + ", " + B + ")";
+    return RGB;
+    console.log(RGB);
+}
+
 mainContainer.addEventListener("mouseover", function(e) {
     if (e.target.className === "grid") {
-        e.target.classList.add("grid-dark");
+        e.target.style.background = generateRGB();
     }
 })
 
