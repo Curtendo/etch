@@ -36,7 +36,10 @@ function generateRGB() {
 
 mainContainer.addEventListener("mouseover", function(e) {
     if (e.target.className === "grid") {
-        e.target.style.background = generateRGB();
+        if (!e.target.classList.contains("grid-changed")) {
+            e.target.style.background = generateRGB();
+            e.target.classList.add("grid-changed");
+        }
     }
 })
 
